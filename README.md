@@ -3,7 +3,7 @@
 ## [Movable Box Generator](https://movablebox.netlify.app/) :zap: 
 
 ---
-<img align='center' src="https://media.giphy.com/media/FgTyJhLSK8W54dzcdL/giphy.gif">
+<img align='center' class="center" src="https://media.giphy.com/media/FgTyJhLSK8W54dzcdL/giphy.gif">
 </br>
 
 </br>
@@ -27,12 +27,13 @@ npm install
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
-## Build
+## Build :large_blue_circle:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build` to build the project.
+</br>
 Use the `ng build --prod` for a production build.
 
 
-## Further help
+## Further help :handshaking:
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
