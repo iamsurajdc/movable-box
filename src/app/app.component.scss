@@ -1,0 +1,24 @@
+.square {
+  height: 100px;
+  width: 100px;
+  background-color: #1E83EC;
+  // background-color: #ffffff;
+  border-radius: 5%;
+  display: inline-block;
+  margin-bottom: 1rem;
+  position: relative;
+  clear: both;
+}
+
+.activeBox {
+  border: 2px solid black;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.mr-l-10 {
+  margin-left: 10px;
+}

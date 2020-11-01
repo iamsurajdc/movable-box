@@ -1,0 +1,37 @@
+<div class="container-fluid text-center col-md-auto">
+  <i>
+    <b>
+      <h1>{{ title }}</h1>
+    </b>
+  </i>
+  <hr />
+  <button class="btn btn-primary" (click)="AddBox()" type="submit">
+    Add Magic!
+  </button>
+  <button class="btn btn-primary mr-l-10" (click)="Clear()" type="submit">
+    Clear
+  </button>
+</div>
+
+<div class="container text-center col-md-auto">
+  <hr />
+  <div
+    class="col-sm-2 col-md-2 col-lg-2"
+    id="BoxParent"
+    *ngFor="let square of Boxes; let i = index"
+  >
+    <div
+      #BoxonDOM
+      type="text"
+      (click)="OnBox(i)"
+      class="square"
+      [ngStyle]="{
+        'z-index': i,
+        background: SquareFocusedId == i ? 'yellow' : ''
+      }"
+      [id]="i"
+    >
+      {{ i }}
+    </div>
+  </div>
+</div>
