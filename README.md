@@ -1,15 +1,14 @@
 # Movable Box Generator
 
-## [Movable Box Generator](https://iamsurajdc.js.org/movable-box/) :zap: 
+## [Movable Box Generator](https://movablebox.netlify.app/) :zap: 
 
 ---
-[boxGIF]: https://github.com/iamsurajdc/movable-box/blob/master/src/assets/boxGif.gif
-![Movable Box generator][boxGIF]
+<img align='center' src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="230">
 </br>
 
 </br>
 
-## [Live Demo:bomb:](https://iamsurajdc.js.org/movable-box/)
+## [Live Demo:bomb:](https://movablebox.netlify.app/)
 
 ## Clone repo :seedling:
 ```
@@ -24,7 +23,7 @@ cd movable-box
 npm install
 ```
 
-### Compiles and hot-reloads for development :large_blue_circle:
+## Compiles and hot-reloads for development :large_blue_circle:
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
