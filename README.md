@@ -3,7 +3,7 @@
 ## [Movable Box Generator](https://movablebox.netlify.app/) :zap: 
 
 ---
-<img align='center' src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="230">
+<img align='center' src="https://media.giphy.com/media/FgTyJhLSK8W54dzcdL/giphy.gif" width="230">
 </br>
 
 </br>
