@@ -63,7 +63,7 @@ export class AppComponent implements OnInit {
     let pixels = selectedStyle.right?.split('px')[0];
 
     selectedStyle.right = Number(pixels) + this.pixelCounter + 'px';
-    console.log(`selectedStyle.right`, selectedStyle.right);
+    // console.log(`selectedStyle.right`, selectedStyle.right);
 
     // Decrease Left
     let SelectedLeft = selectedStyle.left.split('px')[0];
@@ -87,7 +87,7 @@ export class AppComponent implements OnInit {
     let pixels = selectedStyle.left?.split('px')[0];
 
     selectedStyle.left = Number(pixels) + this.pixelCounter + 'px';
-    console.log(`selectedStyle.left`, selectedStyle.left);
+    // console.log(`selectedStyle.left`, selectedStyle.left);
 
     // Decrease Right
     let SelectedRight = selectedStyle.right.split('px')[0];
@@ -99,7 +99,7 @@ export class AppComponent implements OnInit {
     let selectedStyle = this.selectedBox?.style;
     let pixels = selectedStyle.top?.split('px')[0];
     selectedStyle.top = Number(pixels) + this.pixelCounter + 'px';
-    console.log(`selectedStyle.top`, selectedStyle.top);
+    // console.log(`selectedStyle.top`, selectedStyle.top);
 
     // Decrease Right
     let SelectedBottom = selectedStyle.bottom.split('px')[0];
