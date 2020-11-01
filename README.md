@@ -34,6 +34,6 @@ Run `ng build` to build the project.
 Use the `ng build --prod` for a production build.
 
 
-## Further help :handshaking:
+## Further help :v:
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
