@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
       let IsUp = KeyPressed === 'ArrowUp' && global.IsSquareFocused;
 
       if (IsDelete) {
-        // global.onDeleteBox();
+        global.onDeleteBox();
       } else if (IsLeft) {
         global.BoxToLeft();
       } else if (IsRight) {
