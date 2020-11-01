@@ -1,16 +1,32 @@
-# MovableBoxGenerator
+# Movable Box Generator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
+## [Movable Box Generator](https://iamsurajdc.js.org/movable-box/) :zap: 
 
-## Install Dependancies
+---
+[boxGIF]: https://github.com/iamsurajdc/movable-box/blob/master/src/assets/boxGif.gif
+![Movable Box generator][boxGIF]
+</br>
 
-Run `npm install` in order to install required dendencies for project.
+</br>
 
+## [Live Demo:bomb:](https://iamsurajdc.js.org/movable-box/)
 
-## Development server
+## Clone repo :seedling:
+```
+git clone https://github.com/iamsurajdc/movable-box.git
+```
+```
+cd movable-box
+```
+
+## Project setup :seedling:
+```
+npm install
+```
+
+### Compiles and hot-reloads for development :large_blue_circle:
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
-
 
 ## Build
 
