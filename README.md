@@ -1,4 +1,4 @@
-# Movable Box Generator
+# Movable Box Generator :sun_with_face:
 
 ## [Movable Box Generator](https://movablebox.netlify.app/) :zap: 
 
@@ -18,7 +18,7 @@ git clone https://github.com/iamsurajdc/movable-box.git
 cd movable-box
 ```
 
-## Project setup :seedling:
+## Project setup :construction:
 ```
 npm install
 ```

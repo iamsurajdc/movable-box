@@ -23,8 +23,6 @@
     *ngFor="let square of Boxes; let i = index"
   >
     <div
-      #BoxonDOM
-      type="text"
       (click)="OnBox(i)"
       class="square"
       [ngStyle]="{
