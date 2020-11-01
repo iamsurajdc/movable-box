@@ -64,7 +64,7 @@ export class AppComponent implements OnInit {
     // console.log(`selectedStyle.right`, selectedStyle.right);
 
     // Decrease Left
-    let SelectedLeft = selectedStyle.left.split('px')[0];
+    let SelectedLeft = selectedStyle.left?.split('px')[0];
     selectedStyle.left = `${Number(SelectedLeft) - this.pixelCounter}px`;
   }
 
@@ -78,7 +78,7 @@ export class AppComponent implements OnInit {
     selectedStyle.bottom = `${Number(pixels) + this.pixelCounter}px`;
 
     // Decrease Top
-    let SelectedTop = this.selectedBox.style.top.split('px')[0];
+    let SelectedTop = selectedStyle.top.split('px')[0];
     selectedStyle.top = `${Number(SelectedTop) - this.pixelCounter}px`;
   }
 
@@ -105,7 +105,7 @@ export class AppComponent implements OnInit {
   BoxToDown() {
     let selectedStyle = this.selectedBox?.style;
     let pixels = selectedStyle.top?.split('px')[0];
-    selectedStyle.top = Number(pixels) + this.pixelCounter + 'px';
+    selectedStyle.top = `${Number(pixels) + this.pixelCounter}px`;
     // console.log(`selectedStyle.top`, selectedStyle.top);
 
     // Decrease Right
