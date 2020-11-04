@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { BehaviorSubject, Subject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,24 +14,52 @@ export class AppComponent implements OnInit {
   SquareFocusedId: number;
   IsSquareFocused: boolean;
   pixelCounter: number = 25;
+  subscription: Subscription;
+  // private ListenToKeyEvents = new BehaviorSubject<boolean>(true);
+  // private IsListenToKeyEvents = this.ListenToKeyEvents.asObservable();
 
   constructor(@Inject(DOCUMENT) private document: Document) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.init();
+  }
 
   ngAfterViewInit() {
-    this.KeyListener();
+    this.KeyListener(true);
+  }
+
+  // init() {
+  //   this.subscription = this.IsListenToKeyEvents.subscribe((IsToggle) => {
+  //     console.log(`IsToggle`, IsToggle);
+
+  //     return IsToggle;
+  //   });
+  // }
+
+  OnToggleKeyListen(_ev: boolean) {
+    console.log(`ev`, _ev);
+    _ev ? this.KeyListener(_ev) : this.UnListener();
+    // this.IsListenToKeyEvents.next(_ev);
+  }
+
+  UnListener() {
+    console.log(`UnListener`);
+
+    this.document.removeEventListener('keydown', function (_ev) {
+      console.log(`Keys are OFF`);
+    });
   }
 
   /**
    * KeyListener: Function for the listening key events.
    */
 
-  KeyListener() {
+  KeyListener(IsListen: boolean) {
     let global = this;
 
-    this.document.addEventListener('keydown', function (ev) {
-      let KeyPressed = ev.key ? ev.key : null;
+    let listen = this.document.addEventListener('keydown', function (_ev) {
+      let KeyPressed = _ev.key ? _ev.key : null;
+      console.log(`Keys are ON`);
 
       let IsDelete = KeyPressed === 'Delete' && global.IsSquareFocused;
       let IsLeft = KeyPressed === 'ArrowLeft' && global.IsSquareFocused;
@@ -50,6 +79,15 @@ export class AppComponent implements OnInit {
         global.BoxToDown();
       }
     });
+
+    console.log(`listen`, listen);
+
+    //  else {
+    //   this.document.removeEventListener('keydown', () => {
+    //     console.log(`Keys are OFF`);
+
+    //   });
+    // }
   }
 
   /**
@@ -158,5 +196,9 @@ export class AppComponent implements OnInit {
 
   onGeneratePassword() {
     return Math.round(Date.now() + Math.random());
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

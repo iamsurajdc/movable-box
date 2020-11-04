@@ -2,20 +2,20 @@
   "https://media-exp1.licdn.com/dms/image/C510BAQEOSRoCANSeUg/company-logo_200_200/0?e=161239
   6800&v=beta&t=4rX8ELX5-NxAZf86eIc5umF1HofMIt7nY3uhGzxgCvg" -->
 
-  <!-- "https://flytbase.com/wp-content/uploads/2019/08/Website-Header-Black.png" -->
+<!-- "https://flytbase.com/wp-content/uploads/2019/08/Website-Header-Black.png" -->
 <nav class="navbar sticky-top navbar-dark bg-primary">
   <a class="navbar-brand">
     <img
-    src="https://media-exp1.licdn.com/dms/image/C510BAQEOSRoCANSeUg/company-logo_200_200/0?e=1612396800&v=beta&t=4rX8ELX5-NxAZf86eIc5umF1HofMIt7nY3uhGzxgCvg"
+      src="https://media-exp1.licdn.com/dms/image/C510BAQEOSRoCANSeUg/company-logo_200_200/0?e=1612396800&v=beta&t=4rX8ELX5-NxAZf86eIc5umF1HofMIt7nY3uhGzxgCvg"
       width="30"
       height="30"
       class="d-inline-block align-top"
     />
   </a>
   <header class="text-center">
-      <b>
-        <h1>{{ title }}</h1>
-      </b>
+    <b>
+      <h1>{{ title }}</h1>
+    </b>
   </header>
 </nav>
 
@@ -27,6 +27,14 @@
   <button class="btn btn-primary mr-l-10" (click)="Clear()" type="submit">
     Clear
   </button>
+  <label class="switch mr-l-10 btn">
+    <input
+      type="checkbox"
+      checked
+      (change)="OnToggleKeyListen($event.target?.checked)"
+    />
+    <span class="slider round"></span>
+  </label>
 </div>
 
 <div class="container text-center col-md-auto">
