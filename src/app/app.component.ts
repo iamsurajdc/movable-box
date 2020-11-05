@@ -1,6 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { BehaviorSubject, Subject, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -14,52 +13,33 @@ export class AppComponent implements OnInit {
   SquareFocusedId: number;
   IsSquareFocused: boolean;
   pixelCounter: number = 25;
-  subscription: Subscription;
-  // private ListenToKeyEvents = new BehaviorSubject<boolean>(true);
-  // private IsListenToKeyEvents = this.ListenToKeyEvents.asObservable();
+  IsToggle: boolean = true;
 
   constructor(@Inject(DOCUMENT) private document: Document) {}
 
-  ngOnInit(): void {
-    // this.init();
-  }
+  ngOnInit(): void {}
 
   ngAfterViewInit() {
-    this.KeyListener(true);
+    this.KeyListener();
   }
 
-  // init() {
-  //   this.subscription = this.IsListenToKeyEvents.subscribe((IsToggle) => {
-  //     console.log(`IsToggle`, IsToggle);
-
-  //     return IsToggle;
-  //   });
-  // }
-
+  /**
+   *  OnToggleKeyListen: Listen change on toggle button.
+   * @param _ev Event on toggle button for check event.
+   */
   OnToggleKeyListen(_ev: boolean) {
-    console.log(`ev`, _ev);
-    _ev ? this.KeyListener(_ev) : this.UnListener();
-    // this.IsListenToKeyEvents.next(_ev);
-  }
-
-  UnListener() {
-    console.log(`UnListener`);
-
-    this.document.removeEventListener('keydown', function (_ev) {
-      console.log(`Keys are OFF`);
-    });
+    this.IsToggle = _ev;
   }
 
   /**
    * KeyListener: Function for the listening key events.
    */
 
-  KeyListener(IsListen: boolean) {
+  KeyListener() {
     let global = this;
 
-    let listen = this.document.addEventListener('keydown', function (_ev) {
+    this.document.addEventListener('keydown', function (_ev) {
       let KeyPressed = _ev.key ? _ev.key : null;
-      console.log(`Keys are ON`);
 
       let IsDelete = KeyPressed === 'Delete' && global.IsSquareFocused;
       let IsLeft = KeyPressed === 'ArrowLeft' && global.IsSquareFocused;
@@ -67,27 +47,20 @@ export class AppComponent implements OnInit {
       let IsDown = KeyPressed === 'ArrowDown' && global.IsSquareFocused;
       let IsUp = KeyPressed === 'ArrowUp' && global.IsSquareFocused;
 
-      if (IsDelete) {
-        global.onDeleteBox();
-      } else if (IsLeft) {
-        global.BoxToLeft();
-      } else if (IsRight) {
-        global.BoxToRight();
-      } else if (IsUp) {
-        global.BoxToUp();
-      } else if (IsDown) {
-        global.BoxToDown();
+      if (global.IsToggle) {
+        if (IsDelete) {
+          global.onDeleteBox();
+        } else if (IsLeft) {
+          global.BoxToLeft();
+        } else if (IsRight) {
+          global.BoxToRight();
+        } else if (IsUp) {
+          global.BoxToUp();
+        } else if (IsDown) {
+          global.BoxToDown();
+        }
       }
     });
-
-    console.log(`listen`, listen);
-
-    //  else {
-    //   this.document.removeEventListener('keydown', () => {
-    //     console.log(`Keys are OFF`);
-
-    //   });
-    // }
   }
 
   /**
@@ -114,6 +87,7 @@ export class AppComponent implements OnInit {
     let selectedStyle = this.selectedBox?.style;
     let pixels = selectedStyle.bottom?.split('px')[0];
     selectedStyle.bottom = `${Number(pixels) + this.pixelCounter}px`;
+    // console.log(`selectedStyle.bottom`, selectedStyle.bottom);
 
     // Decrease Top
     let SelectedTop = selectedStyle.top.split('px')[0];
@@ -196,9 +170,5 @@ export class AppComponent implements OnInit {
 
   onGeneratePassword() {
     return Math.round(Date.now() + Math.random());
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
   }
 }
